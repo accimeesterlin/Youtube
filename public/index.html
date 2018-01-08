@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>This is an express app</h1>
+
+    <form>
+        <input type="text" name="username" id="username">
+        <input type="text" name="address" id="address">
+        <button>Send Data</button>
+    </form>
+
+
+    <p>I am super excited to be creating an express app</p>
+
+    <ul>
+        <li>Mango</li>
+        <li>Orange</li>
+        <li>Pineapple</li>
+    </ul>
+
+
+    <footer>
+        <p>I am Mr. Footer</p>
+    </footer>
+
+    <script>
+        // 2 ways of sending to the server
+        // Form built method
+        // Ajax, Fetch, 
+
+        $("button").on('click', (event) => {
+            event.preventDefault();
+
+            // Getting the values
+            const username = $("#username").val().trim();
+            const address = $("#address").val().trim()
+
+            const user = {
+                username,
+                address
+            }
+
+            // Sending to our server
+            $.post('/user', user, (response) => {
+                console.log(response);
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>

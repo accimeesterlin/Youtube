@@ -3,44 +3,22 @@
 const express = require("express");
 const app = express(); // start an express app
 
+const bodyParser = require("body-parser");
+const router = require('./routes/routing');
 
-const router = express.Router(); // futher configuration
+// Middlewares
+    // app.use()
 
-
-// Define any routes
-
-// app.get()
-// app.post()
-
-// router.get();
-// router.post();
-
-
-
-router.get('/', (request, response) => {
-    response.json("Hey buddy, you are in the home page");
-});
-
-
-router.get("/accimeesterlin", (req, res) => {
-
-    res.json("You are currently viewing my profile");
-});
-
-
-router.get("/expressjs", (req, res) => {
-    res.json("You are viewing express");
-});
-
-
-router.get("*", (req, res) => {
-    res.json("Page not found");
-});
+// Static Files
+    // HTML
+    // JavaScript
+    // CSS
+    // ETC
+app.use(express.static("public")); // sending static files 
+app.use(bodyParser());
 
 
 app.use("/", router);
-
-
 
 
 
@@ -54,23 +32,3 @@ app.listen(8080, () => {
 
 
 
-
-// app.get('/', (request, response) => {
-//     response.json("Hey buddy, you are in the home page");
-// });
-
-
-// app.get("/accimeesterlin", (req, res) => {
-
-//     res.json("You are currently viewing my profile");
-// });
-
-
-// app.get("/expressjs", (req, res) => {
-//     res.json("You are viewing express");
-// });
-
-
-// app.get("*", (req, res) => {
-//     res.json("Page not found");
-// });
