@@ -1,10 +1,11 @@
 
-
 const express = require("express");
 const app = express(); // start an express app
-
+const path = require("path"); // relative windows or Mac
 const bodyParser = require("body-parser");
-const router = require('./routes/routing');
+
+const router = require("./routes/routing");
+
 
 // Middlewares
     // app.use()
@@ -17,10 +18,7 @@ const router = require('./routes/routing');
 app.use(express.static("public")); // sending static files 
 app.use(bodyParser());
 
-
 app.use("/", router);
-
-
 
 
 app.listen(8080, () => {

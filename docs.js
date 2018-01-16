@@ -1,14 +1,15 @@
 
 
-// What is express?
-    // Routing
+// header
 
+// What is a header?
+    // Additional information to the client and the server
 
 // How do we use it?
-    // Node.js
-    // Basic Understanding of Node.js
-    // NPM
+
+// Why do we use it?
+    // verification
 
 
-// Routes
-    
+// Middlewares
+    // Extend Express functionality    

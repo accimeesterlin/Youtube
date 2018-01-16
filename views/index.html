@@ -52,8 +52,21 @@
             }
 
             // Sending to our server
-            $.post('/user', user, (response) => {
-                console.log(response);
+
+            $.ajax({
+                url:"/user",
+                method:"POST",
+                data: user,
+                headers:{
+                    "x-testing": "teacher",
+                    "x-class":"you rock"
+                }
+            })
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((err) => {
+                console.log("Error, teacher does not have access to this");
             });
         });
 
